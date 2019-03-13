@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.khoi.supplierproto;
+
+option java_multiple_files = true;
+
+
+message GetSupplierListRequest {
+  int32 product_id = 1;
+}
+
+message SupplierEntry {
+  int32 id = 1;
+  string name = 2;
+  string address = 3;
+  int64 createdTime = 4;
+  int64 updatedTime = 5;
+}
+
+
+service SupplierService {
+  rpc getSupplierListByProductId (GetSupplierListRequest) returns (stream SupplierEntry);
+}
