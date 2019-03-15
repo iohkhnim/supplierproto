@@ -13,8 +13,8 @@ message SupplierEntry {
   int32 id = 1;
   string name = 2;
   string address = 3;
-  int64 createdTime = 4;
-  int64 updatedTime = 5;
+  string createdTime = 4;
+  string updatedTime = 5;
 }
 
 
