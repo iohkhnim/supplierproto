@@ -22,8 +22,15 @@ message GetSupplierNameByIdRequest {
 message GetSupplierNameByIdResponse {
   string supplier_name = 1;
 }
+message DeleteSPRequest {
+  int32 product_id = 1;
+}
+message DeleteSPResponse {
+  int32 response = 1;
+}
 
 service SupplierService {
   rpc getSupplierListByProductId (GetSupplierListRequest) returns (stream SupplierEntry);
   rpc getSupplierNameById (GetSupplierNameByIdRequest) returns (GetSupplierNameByIdResponse);
+  rpc deleteSPByProductId (DeleteSPRequest) returns (DeleteSPResponse);
 }
